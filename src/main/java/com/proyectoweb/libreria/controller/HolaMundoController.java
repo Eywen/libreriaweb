@@ -9,6 +9,6 @@ public class HolaMundoController {
     @RequestMapping("/")
     public String holaMundo() {
 
-        return "Hola Mundo";
+        return "Hola Mundo a todos";
     }
 }
