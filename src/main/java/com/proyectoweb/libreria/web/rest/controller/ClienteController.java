@@ -32,7 +32,13 @@ public class ClienteController {
         ClienteMapper clienteMapper1 = Mappers.getMapper(ClienteMapper.class);
 
         //Todo: hacer el mapeo al frontDto
-        return clienteMapper1.convertClienteToClienteDto(clienteEntity).getNombre();
+        String nombreCliente = "";
+        try{
+            nombreCliente = clienteMapper1.convertClienteToClienteDto(clienteEntity).getNombre();
+        }catch (Exception e){
+            nombreCliente = "El Nombre Introducido no es Valido";
+        }
+        return nombreCliente;
     }
     //http://localhost:8080/prueba?hola=abc
     @GetMapping(value = "/prueba")
